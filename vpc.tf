@@ -37,20 +37,9 @@ resource "aws_route_table" "route_table" {
 }
 
 resource "aws_route_table_association" "rta1" {
-  subnet_id      = aws_subnet.subnet01-homo
+  subnet_id      = aws_subnet.subnet-homo.id
   route_table_id = aws_route_table.route_table.id
 }
-
-resource "aws_route_table_association" "rta2" {
-  subnet_id      = aws_subnet.subnet02-homo
-  route_table_id = aws_route_table.route_table.id
-}
-
-resource "aws_route_table_association" "rta3" {
-  subnet_id      = aws_subnet.subnet03-homo
-  route_table_id = aws_route_table.route_table.id
-}
-
 
 resource "aws_security_group" "security_group" {
   name        = "seurit-group-${var.environment}"

@@ -3,22 +3,10 @@ variable "cidr_vpc" {
     type = string  
 }
 
-variable "cidr_subnet01" {
+variable "cidr_subnet" {
     description = "CIDR da Subnet na AWS"
     type = string  
 }
-
-
-variable "cidr_subnet02" {
-    description = "CIDR da Subnet na AWS"
-    type = string  
-}
-
-variable "cidr_subnet03" {
-    description = "CIDR da Subnet na AWS"
-    type = string  
-}
-
 
 variable "environment" {
     description = "Ambiente dos recursos criados"
