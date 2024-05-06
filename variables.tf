@@ -8,6 +8,11 @@ variable "cidr_subnet" {
     type = string  
 }
 
+variable "cidr_subnet2" {
+    description = "CIDR da Subnet na AWS"
+    type = string  
+}
+
 variable "environment" {
     description = "Ambiente dos recursos criados"
     type = string  

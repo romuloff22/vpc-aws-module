@@ -15,6 +15,15 @@ resource "aws_subnet" "subnet-homo" {
   }
 }
 
+resource "aws_subnet" "subnet2-homo" {
+  vpc_id     = aws_vpc.vpc-homo.id
+  cidr_block = var.cidr_subnet2
+
+  tags = {
+    Name = "subnet01-${var.environment}"
+  }
+}
+
 resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.vpc-homo.id
 
@@ -38,6 +47,11 @@ resource "aws_route_table" "route_table" {
 
 resource "aws_route_table_association" "rta1" {
   subnet_id      = aws_subnet.subnet-homo.id
+  route_table_id = aws_route_table.route_table.id
+}
+
+resource "aws_route_table_association" "rta2" {
+  subnet_id      = aws_subnet.subnet2-homo.id
   route_table_id = aws_route_table.route_table.id
 }
 
