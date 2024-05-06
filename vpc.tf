@@ -33,6 +33,34 @@ resource "aws_subnet" "subnet3-homo" {
   }
 }
 
+resource "aws_subnet" "subnet4-homo-prv" {
+  vpc_id     = aws_vpc.vpc-homo.id
+  cidr_block = var.cidr_subnet4
+
+  tags = {
+    Name = "subnet03-${var.environment}"
+  }
+}
+
+resource "aws_subnet" "subnet5-homo-prv" {
+  vpc_id     = aws_vpc.vpc-homo.id
+  cidr_block = var.cidr_subnet5
+
+  tags = {
+    Name = "subnet03-${var.environment}"
+  }
+}
+
+resource "aws_subnet" "subnet6-homo-prv" {
+  vpc_id     = aws_vpc.vpc-homo.id
+  cidr_block = var.cidr_subnet6
+
+  tags = {
+    Name = "subnet03-${var.environment}"
+  }
+}
+
+
 resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.vpc-homo.id
 
