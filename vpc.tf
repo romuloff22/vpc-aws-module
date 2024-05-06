@@ -20,7 +20,7 @@ resource "aws_subnet" "subnet2-homo" {
   cidr_block = var.cidr_subnet2
 
   tags = {
-    Name = "subnet01-${var.environment}"
+    Name = "subnet02-${var.environment}"
   }
 }
 
