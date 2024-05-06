@@ -13,6 +13,21 @@ output "subnet3_id" {
   value       = aws_subnet.subnet3-homo.id
 }
 
+output "subnet4_id" {
+  description = "Id da Subnet 04"
+  value       = aws_subnet.subnet4-homo.id
+}
+
+output "subnet5_id" {
+  description = "Id da Subnet 05"
+  value       = aws_subnet.subnet5-homo.id
+}
+
+output "subnet6_id" {
+  description = "Id da Subnet 06"
+  value       = aws_subnet.subnet6-homo.id
+}
+
 output "security_group_id" {
   description = "ID do Security Group"
   value       = aws_security_group.security_group.id
