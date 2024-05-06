@@ -6,29 +6,12 @@ resource "aws_vpc" "vpc-homo" {
   }
 }
 
-resource "aws_subnet" "subnet01-homo" {
+resource "aws_subnet" "subnet-homo" {
   vpc_id     = aws_vpc.vpc-homo.id
-  cidr_block = var.cidr_subnet01
+  cidr_block = var.cidr_subnet
 
   tags = {
     Name = "subnet01-${var.environment}"
-  }
-}
-
-resource "aws_subnet" "subnet02-homo" {
-  vpc_id     = aws_vpc.vpc-homo.id
-  cidr_block = var.cidr_subnet02
-  tags = {
-    Name = "subnet02-${var.environment}"
-  }
-}
-
-resource "aws_subnet" "subnet03-homo" {
-  vpc_id     = aws_vpc.vpc-homo.id
-  cidr_block = var.cidr_subnet03
-
-  tags = {
-    Name = "subnet03-${var.environment}"
   }
 }
 
