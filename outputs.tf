@@ -1,31 +1,31 @@
 output "subnet_id" {
   description = "Id da Subnet 01"
-  value       = aws_subnet.subnet-homo.id
+  value       = aws_subnet.subnet01.id
 }
 
 output "subnet2_id" {
   description = "Id da Subnet 02"
-  value       = aws_subnet.subnet2-homo.id
+  value       = aws_subnet.subnet02.id
 }
 
 output "subnet3_id" {
   description = "Id da Subnet 03"
-  value       = aws_subnet.subnet3-homo.id
+  value       = aws_subnet.subnet03.id
 }
 
 output "subnet4_id" {
   description = "Id da Subnet 04"
-  value       = aws_subnet.subnet4-homo.id
+  value       = aws_subnet.subnet04.id
 }
 
 output "subnet5_id" {
   description = "Id da Subnet 05"
-  value       = aws_subnet.subnet5-homo.id
+  value       = aws_subnet.subnet05.id
 }
 
 output "subnet6_id" {
   description = "Id da Subnet 06"
-  value       = aws_subnet.subnet6-homo.id
+  value       = aws_subnet.subnet06.id
 }
 
 output "security_group01_id" {

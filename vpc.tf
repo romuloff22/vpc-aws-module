@@ -6,7 +6,7 @@ resource "aws_vpc" "vpc-homo" {
   }
 }
 
-resource "aws_subnet" "subnet-homo" {
+resource "aws_subnet" "subnet01" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet
   availability_zone = "sa-east-1a"
@@ -16,7 +16,7 @@ resource "aws_subnet" "subnet-homo" {
   }
 }
 
-resource "aws_subnet" "subnet2-homo" {
+resource "aws_subnet" "subnet02" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet2
   availability_zone = "sa-east-1b"
@@ -26,7 +26,7 @@ resource "aws_subnet" "subnet2-homo" {
   }
 }
 
-resource "aws_subnet" "subnet3-homo" {
+resource "aws_subnet" "subnet03" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet3
   availability_zone = "sa-east-1c"
@@ -36,33 +36,33 @@ resource "aws_subnet" "subnet3-homo" {
   }
 }
 
-resource "aws_subnet" "subnet4-homo-prv" {
+resource "aws_subnet" "subnet04" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet4
   availability_zone = "sa-east-1a"
 
   tags = {
-    Name = "subnet04-${var.environment}"
+    Name = "subnet04-prv-${var.environment}"
   }
 }
 
-resource "aws_subnet" "subnet5-homo-prv" {
+resource "aws_subnet" "subnet05" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet5
   availability_zone = "sa-east-1b"
 
   tags = {
-    Name = "subnet05-${var.environment}"
+    Name = "subnet05-prv-${var.environment}"
   }
 }
 
-resource "aws_subnet" "subnet6-homo-prv" {
+resource "aws_subnet" "subnet06" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet6
   availability_zone = "sa-east-1c"
 
   tags = {
-    Name = "subnet06-${var.environment}"
+    Name = "subnet06-prv-${var.environment}"
   }
 }
 
@@ -289,7 +289,7 @@ resource "aws_security_group" "security_group_03" {
   }
 }
 
-resource "aws_security_group" "securit_group_04" {
+resource "aws_security_group" "security_group_04" {
   name        = "rds-qa-homo-${var.environment}"
   description = "Permitir acesso a porta 5432"
   vpc_id      = aws_vpc.vpc-homo.id
@@ -303,7 +303,7 @@ resource "aws_security_group" "securit_group_04" {
   }
 }
 
-resource "aws_security_group" "seurit_group_05" {
+resource "aws_security_group" "seurity_group_05" {
   name        = "rds-launch-wizard-${var.environment}"
   description = "Permitir acesso a porta 5432"
   vpc_id      = aws_vpc.vpc-homo.id
