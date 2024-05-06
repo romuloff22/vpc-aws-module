@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc-homo" {
 resource "aws_subnet" "subnet01" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet
-  availability_zone = "sa-east-1a"
+  availability_zone = "us-east-2a"
 
   tags = {
     Name = "subnet01-${var.environment}"
@@ -19,7 +19,7 @@ resource "aws_subnet" "subnet01" {
 resource "aws_subnet" "subnet02" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet2
-  availability_zone = "sa-east-1b"
+  availability_zone = "us-east-2b"
 
   tags = {
     Name = "subnet02-${var.environment}"
@@ -29,7 +29,7 @@ resource "aws_subnet" "subnet02" {
 resource "aws_subnet" "subnet03" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet3
-  availability_zone = "sa-east-1c"
+  availability_zone = "us-east-2c"
 
   tags = {
     Name = "subnet03-${var.environment}"
@@ -39,7 +39,7 @@ resource "aws_subnet" "subnet03" {
 resource "aws_subnet" "subnet04" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet4
-  availability_zone = "sa-east-1a"
+  availability_zone = "us-east-2a"
 
   tags = {
     Name = "subnet04-prv-${var.environment}"
@@ -49,7 +49,7 @@ resource "aws_subnet" "subnet04" {
 resource "aws_subnet" "subnet05" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet5
-  availability_zone = "sa-east-1b"
+  availability_zone = "us-east-2b"
 
   tags = {
     Name = "subnet05-prv-${var.environment}"
@@ -59,7 +59,7 @@ resource "aws_subnet" "subnet05" {
 resource "aws_subnet" "subnet06" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet6
-  availability_zone = "sa-east-1c"
+  availability_zone = "us-east-2c"
 
   tags = {
     Name = "subnet06-prv-${var.environment}"
