@@ -4,12 +4,17 @@ variable "cidr_vpc" {
 }
 
 variable "cidr_subnet" {
-    description = "CIDR da Subnet na AWS"
+    description = "CIDR da Subnet1 na AWS"
     type = string  
 }
 
 variable "cidr_subnet2" {
-    description = "CIDR da Subnet na AWS"
+    description = "CIDR da Subnet2 na AWS"
+    type = string  
+}
+
+variable "cidr_subnet3" {
+    description = "CIDR da Subnet3 na AWS"
     type = string  
 }
 
