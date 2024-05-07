@@ -52,3 +52,8 @@ output "security_group05_id" {
   description = "ID do Security Group"
   value       = aws_security_group.seurity_group_05.id
 }
+
+output "internet_gateway_id" {
+  description = "ID do Internet gateway"
+  value       = aws_internet_gateway.internet_gateway.id
+}
