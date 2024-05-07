@@ -91,28 +91,16 @@ resource "aws_route_table" "route_table" {
 resource "aws_route_table_association" "rta1" {
   subnet_id      = aws_subnet.subnet01.id
   route_table_id = aws_route_table.route_table.id
-
-  tags = {
-    Name = "rta01-${var.environment}"
-  }
 }
 
 resource "aws_route_table_association" "rta2" {
   subnet_id      = aws_subnet.subnet02.id
   route_table_id = aws_route_table.route_table.id
-
-  tags = {
-    Name = "rta02-${var.environment}"
-  }
 }
 
 resource "aws_route_table_association" "rta3" {
   subnet_id      = aws_subnet.subnet03.id
   route_table_id = aws_route_table.route_table.id
-
-  tags = {
-    Name = "rta03-${var.environment}"
-  }
 }
 
 resource "aws_security_group" "security_group_01" {
