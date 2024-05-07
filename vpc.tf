@@ -103,30 +103,6 @@ resource "aws_route_table_association" "rta3" {
   route_table_id = aws_route_table.route_table.id
 }
 
-/*resource "aws_security_group" "security_group" {
-  name        = "seurit-group-${var.environment}"
-  description = "Permitir acesso a porta 22"
-  vpc_id      = aws_vpc.vpc-homo.id
-
-  ingress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "security-group-${var.environment}"
-  }
-}*/
-
 resource "aws_security_group" "security_group_01" {
   name        = "launch-wizard-1-${var.environment}"
   description = "Permitir acesso a porta 22, 80 e 443"
@@ -327,4 +303,11 @@ resource "aws_security_group" "seurity_group_05" {
   tags = {
     Name = "security-group-${var.environment}"
   }
+}
+
+resource "aws_eip" "lb" {
+  instance = aws_instance.vm01.id
+  domain   = "vpc"
+
+  depends_on = [module.vpc-aws-module.internet_gateway_id]
 }
