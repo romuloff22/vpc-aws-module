@@ -10,7 +10,7 @@ output "subnet2_id" {
 
 output "subnet3_id" {
   description = "Id da Subnet 03"
-  value       = aws_subnet.subnet03.id
+  value = aws_subnet.subnet03.id
 }
 
 output "subnet4_id" {
@@ -35,7 +35,7 @@ output "subnet6_id" {
 
 output "security_group02_id" {
   description = "ID do Security Group"
-  value       = aws_security_group.security_group_02
+  value       = aws_security_group.security_group_02.id
 }
 
 /*output "security_group03_id" {
