@@ -6,26 +6,6 @@ resource "aws_vpc" "vpc-homo" {
   }
 }
 
-/*resource "aws_subnet" "subnet01" {
-  vpc_id     = aws_vpc.vpc-homo.id
-  cidr_block = var.cidr_subnet
-  availability_zone = "us-east-1a"
-
-  tags = {
-    Name = "subnet01-${var.environment}"
-  }
-}
-
-resource "aws_subnet" "subnet02" {
-  vpc_id     = aws_vpc.vpc-homo.id
-  cidr_block = var.cidr_subnet2
-  availability_zone = "us-east-1b"
-
-  tags = {
-    Name = "subnet02-${var.environment}"
-  }
-}*/
-
 resource "aws_subnet" "subnet03" {
   vpc_id     = aws_vpc.vpc-homo.id
   cidr_block = var.cidr_subnet3
@@ -88,60 +68,10 @@ resource "aws_route_table" "route_table" {
   }
 }
 
-/*resource "aws_route_table_association" "rta1" {
-  subnet_id      = aws_subnet.subnet01.id
-  route_table_id = aws_route_table.route_table.id
-}
-
-resource "aws_route_table_association" "rta2" {
-  subnet_id      = aws_subnet.subnet02.id
-  route_table_id = aws_route_table.route_table.id
-}*/
-
 resource "aws_route_table_association" "rta3" {
   subnet_id      = aws_subnet.subnet03.id
   route_table_id = aws_route_table.route_table.id
 }
-
-/*resource "aws_security_group" "security_group_01" {
-  name        = "launch-wizard-1-${var.environment}"
-  description = "Permitir acesso a porta 22, 80 e 443"
-  vpc_id      = aws_vpc.vpc-homo.id
-
-  ingress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "HTTP"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "HTTPS"
-    from_port = 443
-    to_port = 443
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "security-group-${var.environment}"
-  }
-}*/
 
 resource "aws_security_group" "security_group_02" {
   name        = "launch-wizard-2-${var.environment}"
@@ -246,38 +176,6 @@ resource "aws_security_group" "security_group_02" {
     Name = "security-group02-${var.environment}"
   }
 }
-
-/*resource "aws_security_group" "security_group_03" {
-  name        = "launch-wizard-3-${var.environment}"
-  description = "Permitir acesso a porta 22"
-  vpc_id      = aws_vpc.vpc-homo.id
-
-  ingress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "security-group-${var.environment}"
-  }
-}
-
-resource "aws_security_group" "security_group_04" {
-  name        = "rds-qa-homo-${var.environment}"
-  description = "Permitir acesso a porta 5432"
-  vpc_id      = aws_vpc.vpc-homo.id
-
-  ingress {
-    description = "PostgreSQL"
-    from_port   = 5432
-    to_port     = 5432
-    protocol    = "tcp"
-    cidr_blocks = ["186.206.254.117/32", "191.34.39.253/32", "172.31.29.21/32"]
-  }
-}*/
 
 resource "aws_security_group" "seurity_group_05" {
   name        = "rds-launch-wizard-${var.environment}"
