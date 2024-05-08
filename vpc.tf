@@ -243,7 +243,7 @@ resource "aws_security_group" "security_group_02" {
   }
 
   tags = {
-    Name = "security-group-${var.environment}"
+    Name = "security-group02-${var.environment}"
   }
 }
 
@@ -301,7 +301,7 @@ resource "aws_security_group" "seurity_group_05" {
   }
 
   tags = {
-    Name = "security-group-${var.environment}"
+    Name = "security-group05-${var.environment}"
   }
 }
 
