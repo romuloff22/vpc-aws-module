@@ -1,6 +1,21 @@
+output "vpc_id" {
+  description = "ID da VPC"
+  value = aws_vpc.vpc-homo.id
+}
+
+output "subnet1_id" {
+  description = "Id da Subnet 01"
+  value       = aws_subnet.subnet01.id
+}
+
+output "subnet2_id" {
+  description = "Id da Subnet 02"
+  value       = aws_subnet.subnet02.id
+}
+
 output "subnet3_id" {
   description = "Id da Subnet 03"
-  value = aws_subnet.subnet03.id
+  value       = aws_subnet.subnet03.id
 }
 
 output "subnet4_id" {
